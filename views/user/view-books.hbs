@@ -1,0 +1,1023 @@
+<select onchange="sortList(this.value)" class="form-control col-3" name="Category">
+    <option>Select Category</option>
+                        <option>ഇസ്‌ലാമിക് പഠനം</option>
+                        <option>ഇസ്ലാമിക ചരിത്രം</option>
+                        <option>പഠനം</option>
+                        <option>ചരിത്രം</option>
+                        <option>ലേഖനം</option>
+                        <option>കഥ</option>
+                        <option>നോവൽ</option>
+                        <option>കവിത</option>
+                        <option>യാത്ര</option>
+                        <option>സ്മരണ</option>
+                        <option>അനുഭവം</option>
+                        <option>ഓർമ്മ</option>
+                        <option>ജീവചരിത്രം</option>
+                        <option>Philosophy</option>
+                        <option>ആദർശം</option>
+                        <option>Study</option>
+                        <option>Novel</option>
+                        <option>Story</option>
+                        <option>Poem</option>
+                        <option>Biography</option>
+                        <option>Laibe and culture</option>
+                        <option>Self help</option>
+</select>
+<section id="filteredSection" hidden>
+    <div>
+
+        <h2 id="categoryh2" class="h2 text-info text-center mt-5">fff</h2>
+
+        <table id="dtMaterialDesignExample" class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Hold@</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Option</th>
+                </tr>
+            </thead>
+
+
+            <tbody id="categoryContainer">
+
+                
+               
+
+            </tbody>
+        </table>
+         
+    </div>
+</section>
+<div id="fullList">
+<section>
+        
+    <div>
+        {{#if data}}
+
+        
+
+        <h2 class="h2 text-info text-center mt-5">ഇസ്‌ലാമിക് പഠനം</h2>
+
+        <table id="dtMaterialDesignExample" class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Hold@</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Option</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                {{#each data}}
+
+
+                <tr>
+                    <td scope="row">{{this.No}}</td>
+                    <td>{{this.Name}}</td>
+                    <td>{{this.Category}}</td>
+                    <td>{{this.Author}}</td>
+                    <td>{{this.Publisher}}</td>
+                    <td>{{this.Holder}}</td>
+                    <td><img src="/product-images/{{this._id}}.jpg" style="height: 80px;" alt="image"> </td>
+                    <td><a href="/add-my-books/{{this._id}}" class="btn btn-primary">Add to My Books</a></td>
+
+
+                </tr>
+                {{/each}}
+
+            </tbody>
+        </table>
+        
+        {{/if}}
+    </div>
+</section>
+<section>
+    <div>
+
+        <h2 class="h2 text-info text-center mt-5">ഇസ്ലാമിക ചരിത്രം</h2>
+
+        <table id="dtMaterialDesignExample" class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Hold@</th>
+                    <th scope="col">Image</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                {{#each islamicHistory}}
+
+
+
+                <tr>
+                    <th scope="row">{{this.No}}</th>
+                    <td>{{this.Name}}</td>
+                    <td>{{this.Category}}</td>
+                    <td>{{this.Author}}</td>
+                    <td>{{this.Publisher}}</td>
+                    <td>{{this.Holder}}</td>
+                    <td><img src="/product-images/{{this._id}}.jpg" style="height: 80px;" alt="image"> </td>
+                    <td><a href="/add-my-books/{{this._id}}" class="btn btn-primary">Add to My Books</a></td>
+
+
+                </tr>
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+</section>
+<section>
+    <div>
+
+        <h2 class="h2 text-info text-center mt-5">പഠനം</h2>
+
+        <table id="dtMaterialDesignExample" class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Hold@</th>
+                    <th scope="col">Image</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                {{#each study}}
+
+
+
+                <tr>
+                    <th scope="row">{{this.No}}</th>
+                    <td>{{this.Name}}</td>
+                    <td>{{this.Category}}</td>
+                    <td>{{this.Author}}</td>
+                    <td>{{this.Publisher}}</td>
+                    <td>{{this.Holder}}</td>
+                    <td><img src="/product-images/{{this._id}}.jpg" style="height: 80px;" alt="image"> </td>
+                    <td><a href="/add-my-books/{{this._id}}" class="btn btn-primary">Add to My Books</a></td>
+
+
+                </tr>
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+</section>
+<section>
+    <div>
+
+        <h2 class="h2 text-info text-center mt-5">ചരിത്രം</h2>
+
+        <table id="dtMaterialDesignExample" class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Hold@</th>
+                    <th scope="col">Image</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                {{#each history}}
+
+
+
+                <tr>
+                    <th scope="row">{{this.No}}</th>
+                    <td>{{this.Name}}</td>
+                    <td>{{this.Category}}</td>
+                    <td>{{this.Author}}</td>
+                    <td>{{this.Publisher}}</td>
+                    <td>{{this.Holder}}</td>
+                    <td><img src="/product-images/{{this._id}}.jpg" style="height: 80px;" alt="image"> </td>
+                    <td><a href="/add-my-books/{{this._id}}" class="btn btn-primary">Add to My Books</a></td>
+
+
+                </tr>
+                {{/each}}
+
+            </tbody>
+        </table>
+        </div>
+</section>
+<section>
+    <div>
+
+        <h2 class="h2 text-info text-center mt-5">ലേഖനം</h2>
+
+        <table id="dtMaterialDesignExample" class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Hold@</th>
+                    <th scope="col">Image</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                {{#each article}}
+
+
+
+                <tr>
+                    <th scope="row">{{this.No}}</th>
+                    <td>{{this.Name}}</td>
+                    <td>{{this.Category}}</td>
+                    <td>{{this.Author}}</td>
+                    <td>{{this.Publisher}}</td>
+                    <td>{{this.Holder}}</td>
+                    <td><img src="/product-images/{{this._id}}.jpg" style="height: 80px;" alt="image"> </td>
+                    <td><a href="/add-my-books/{{this._id}}" class="btn btn-primary">Add to My Books</a></td>
+
+
+                </tr>
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+</section>
+<section>
+    <div>
+
+        <h2 class="h2 text-info text-center mt-5">കഥ</h2>
+
+        <table id="dtMaterialDesignExample" class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Hold@</th>
+                    <th scope="col">Image</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                {{#each story}}
+
+
+
+                <tr>
+                    <th scope="row">{{this.No}}</th>
+                    <td>{{this.Name}}</td>
+                    <td>{{this.Category}}</td>
+                    <td>{{this.Author}}</td>
+                    <td>{{this.Publisher}}</td>
+                    <td>{{this.Holder}}</td>
+                    <td><img src="/product-images/{{this._id}}.jpg" style="height: 80px;" alt="image"> </td>
+                    <td><a href="/add-my-books/{{this._id}}" class="btn btn-primary">Add to My Books</a></td>
+
+
+                </tr>
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+</section>
+<section>
+    <div>
+
+        <h2 class="h2 text-info text-center mt-5">നോവൽ</h2>
+
+        <table id="dtMaterialDesignExample" class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Hold@</th>
+                    <th scope="col">Image</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                {{#each novel}}
+
+
+
+                <tr>
+                    <th scope="row">{{this.No}}</th>
+                    <td>{{this.Name}}</td>
+                    <td>{{this.Category}}</td>
+                    <td>{{this.Author}}</td>
+                    <td>{{this.Publisher}}</td>
+                    <td>{{this.Holder}}</td>
+                    <td><img src="/product-images/{{this._id}}.jpg" style="height: 80px;" alt="image"> </td>
+                    <td><a href="/add-my-books/{{this._id}}" class="btn btn-primary">Add to My Books</a></td>
+
+
+                </tr>
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+</section>
+<section>
+    <div>
+
+        <h2 class="h2 text-info text-center mt-5">കവിത</h2>
+
+        <table id="dtMaterialDesignExample" class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Hold@</th>
+                    <th scope="col">Image</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                {{#each poem}}
+
+
+
+                <tr>
+                    <th scope="row">{{this.No}}</th>
+                    <td>{{this.Name}}</td>
+                    <td>{{this.Category}}</td>
+                    <td>{{this.Author}}</td>
+                    <td>{{this.Publisher}}</td>
+                    <td>{{this.Holder}}</td>
+                    <td><img src="/product-images/{{this._id}}.jpg" style="height: 80px;" alt="image"> </td>
+                    <td><a href="/add-my-books/{{this._id}}" class="btn btn-primary">Add to My Books</a></td>
+
+
+                </tr>
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+</section>
+<section>
+    <div>
+
+        <h2 class="h2 text-info text-center mt-5">യാത്ര</h2>
+
+        <table id="dtMaterialDesignExample" class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Hold@</th>
+                    <th scope="col">Image</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                {{#each travel}}
+
+
+
+                <tr>
+                    <th scope="row">{{this.No}}</th>
+                    <td>{{this.Name}}</td>
+                    <td>{{this.Category}}</td>
+                    <td>{{this.Author}}</td>
+                    <td>{{this.Publisher}}</td>
+                    <td>{{this.Holder}}</td>
+                    <td><img src="/product-images/{{this._id}}.jpg" style="height: 80px;" alt="image"> </td>
+                    <td><a href="/add-my-books/{{this._id}}" class="btn btn-primary">Add to My Books</a></td>
+
+
+                </tr>
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+</section>
+<section>
+    <div>
+
+        <h2 class="h2 text-info text-center mt-5">സ്മരണ</h2>
+
+        <table id="dtMaterialDesignExample" class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Hold@</th>
+                    <th scope="col">Image</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                {{#each memory}}
+
+
+
+                <tr>
+                    <th scope="row">{{this.No}}</th>
+                    <td>{{this.Name}}</td>
+                    <td>{{this.Category}}</td>
+                    <td>{{this.Author}}</td>
+                    <td>{{this.Publisher}}</td>
+                    <td>{{this.Holder}}</td>
+                    <td><img src="/product-images/{{this._id}}.jpg" style="height: 80px;" alt="image"> </td>
+                    <td><a href="/add-my-books/{{this._id}}" class="btn btn-primary">Add to My Books</a></td>
+
+
+                </tr>
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+</section>
+<section>
+    <div>
+
+        <h2 class="h2 text-info text-center mt-5">അനുഭവം</h2>
+
+        <table id="dtMaterialDesignExample" class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Hold@</th>
+                    <th scope="col">Image</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                {{#each experience}}
+
+
+
+                <tr>
+                    <th scope="row">{{this.No}}</th>
+                    <td>{{this.Name}}</td>
+                    <td>{{this.Category}}</td>
+                    <td>{{this.Author}}</td>
+                    <td>{{this.Publisher}}</td>
+                    <td>{{this.Holder}}</td>
+                    <td><img src="/product-images/{{this._id}}.jpg" style="height: 80px;" alt="image"> </td>
+                    <td><a href="/add-my-books/{{this._id}}" class="btn btn-primary">Add to My Books</a></td>
+
+
+                </tr>
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+</section>
+<section>
+    <div>
+
+        <h2 class="h2 text-info text-center mt-5">ഓർമ്മ</h2>
+
+        <table id="dtMaterialDesignExample" class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Hold@</th>
+                    <th scope="col">Image</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                {{#each orma}}
+
+
+
+                <tr>
+                    <th scope="row">{{this.No}}</th>
+                    <td>{{this.Name}}</td>
+                    <td>{{this.Category}}</td>
+                    <td>{{this.Author}}</td>
+                    <td>{{this.Publisher}}</td>
+                    <td>{{this.Holder}}</td>
+                    <td><img src="/product-images/{{this._id}}.jpg" style="height: 80px;" alt="image"> </td>
+                    <td><a href="/add-my-books/{{this._id}}" class="btn btn-primary">Add to My Books</a></td>
+
+
+                </tr>
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+</section>
+<section>
+    <div>
+
+        <h2 class="h2 text-info text-center mt-5">ജീവചരിത്രം</h2>
+
+        <table id="dtMaterialDesignExample" class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Hold@</th>
+                    <th scope="col">Image</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                {{#each jeevacharithram}}
+
+
+
+                <tr>
+                    <th scope="row">{{this.No}}</th>
+                    <td>{{this.Name}}</td>
+                    <td>{{this.Category}}</td>
+                    <td>{{this.Author}}</td>
+                    <td>{{this.Publisher}}</td>
+                    <td>{{this.Holder}}</td>
+                    <td><img src="/product-images/{{this._id}}.jpg" style="height: 80px;" alt="image"> </td>
+                    <td><a href="/add-my-books/{{this._id}}" class="btn btn-primary">Add to My Books</a></td>
+
+
+                </tr>
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+</section>
+<section>
+    <div>
+
+        <h2 class="h2 text-info text-center mt-5">Philosophy</h2>
+
+        <table id="dtMaterialDesignExample" class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Hold@</th>
+                    <th scope="col">Image</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                {{#each philosaphy}}
+
+
+
+                <tr>
+                    <th scope="row">{{this.No}}</th>
+                    <td>{{this.Name}}</td>
+                    <td>{{this.Category}}</td>
+                    <td>{{this.Author}}</td>
+                    <td>{{this.Publisher}}</td>
+                    <td>{{this.Holder}}</td>
+                    <td><img src="/product-images/{{this._id}}.jpg" style="height: 80px;" alt="image"> </td>
+                    <td><a href="/add-my-books/{{this._id}}" class="btn btn-primary">Add to My Books</a></td>
+
+
+                </tr>
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+</section>
+<section>
+    <div>
+
+        <h2 class="h2 text-info text-center mt-5">ആദർശം</h2>
+
+        <table id="dtMaterialDesignExample" class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Hold@</th>
+                    <th scope="col">Image</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                {{#each aadarsham}}
+
+
+
+                <tr>
+                    <th scope="row">{{this.No}}</th>
+                    <td>{{this.Name}}</td>
+                    <td>{{this.Category}}</td>
+                    <td>{{this.Author}}</td>
+                    <td>{{this.Publisher}}</td>
+                    <td>{{this.Holder}}</td>
+                    <td><img src="/product-images/{{this._id}}.jpg" style="height: 80px;" alt="image"> </td>
+                    <td><a href="/add-my-books/{{this._id}}" class="btn btn-primary">Add to My Books</a></td>
+
+
+                </tr>
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+</section>
+<section>
+    <div>
+
+        <h2 class="h2 text-info text-center mt-5">Study</h2>
+
+        <table id="dtMaterialDesignExample" class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Hold@</th>
+                    <th scope="col">Image</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                {{#each studyEn}}
+
+
+
+                <tr>
+                    <th scope="row">{{this.No}}</th>
+                    <td>{{this.Name}}</td>
+                    <td>{{this.Category}}</td>
+                    <td>{{this.Author}}</td>
+                    <td>{{this.Publisher}}</td>
+                    <td>{{this.Holder}}</td>
+                    <td><img src="/product-images/{{this._id}}.jpg" style="height: 80px;" alt="image"> </td>
+                    <td><a href="/add-my-books/{{this._id}}" class="btn btn-primary">Add to My Books</a></td>
+
+
+                </tr>
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+</section>
+<section>
+    <div>
+
+        <h2 class="h2 text-info text-center mt-5">Novel</h2>
+
+        <table id="dtMaterialDesignExample" class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Hold@</th>
+                    <th scope="col">Image</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                {{#each novelEn}}
+
+
+
+                <tr>
+                    <th scope="row">{{this.No}}</th>
+                    <td>{{this.Name}}</td>
+                    <td>{{this.Category}}</td>
+                    <td>{{this.Author}}</td>
+                    <td>{{this.Publisher}}</td>
+                    <td>{{this.Holder}}</td>
+                    <td><img src="/product-images/{{this._id}}.jpg" style="height: 80px;" alt="image"> </td>
+                    <td><a href="/add-my-books/{{this._id}}" class="btn btn-primary">Add to My Books</a></td>
+
+
+                </tr>
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+</section>
+<section>
+    <div>
+
+        <h2 class="h2 text-info text-center mt-5">Story</h2>
+
+        <table id="dtMaterialDesignExample" class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Hold@</th>
+                    <th scope="col">Image</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                {{#each storyEn}}
+
+
+
+                <tr>
+                    <th scope="row">{{this.No}}</th>
+                    <td>{{this.Name}}</td>
+                    <td>{{this.Category}}</td>
+                    <td>{{this.Author}}</td>
+                    <td>{{this.Publisher}}</td>
+                    <td>{{this.Holder}}</td>
+                    <td><img src="/product-images/{{this._id}}.jpg" style="height: 80px;" alt="image"> </td>
+                    <td><a href="/add-my-books/{{this._id}}" class="btn btn-primary">Add to My Books</a></td>
+
+
+                </tr>
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+</section>
+<section>
+    <div>
+
+        <h2 class="h2 text-info text-center mt-5">Poem</h2>
+
+        <table id="dtMaterialDesignExample" class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Hold@</th>
+                    <th scope="col">Image</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                {{#each poemEn}}
+
+
+
+                <tr>
+                    <th scope="row">{{this.No}}</th>
+                    <td>{{this.Name}}</td>
+                    <td>{{this.Category}}</td>
+                    <td>{{this.Author}}</td>
+                    <td>{{this.Publisher}}</td>
+                    <td>{{this.Holder}}</td>
+                    <td><img src="/product-images/{{this._id}}.jpg" style="height: 80px;" alt="image"> </td>
+                    <td><a href="/add-my-books/{{this._id}}" class="btn btn-primary">Add to My Books</a></td>
+
+
+                </tr>
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+</section>
+<section>
+    <div>
+
+        <h2 class="h2 text-info text-center mt-5">Biography</h2>
+
+        <table id="dtMaterialDesignExample" class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Hold@</th>
+                    <th scope="col">Image</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                {{#each biography}}
+
+
+
+                <tr>
+                    <th scope="row">{{this.No}}</th>
+                    <td>{{this.Name}}</td>
+                    <td>{{this.Category}}</td>
+                    <td>{{this.Author}}</td>
+                    <td>{{this.Publisher}}</td>
+                    <td>{{this.Holder}}</td>
+                    <td><img src="/product-images/{{this._id}}.jpg" style="height: 80px;" alt="image"> </td>
+                    <td><a href="/add-my-books/{{this._id}}" class="btn btn-primary">Add to My Books</a></td>
+
+
+                </tr>
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+</section>
+<section>
+    <div>
+        {{#each Laibeandculture}}
+        <h2 class="h2 text-info text-center mt-5">Laibe and culture</h2>
+
+        <table id="dtMaterialDesignExample" class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Hold@</th>
+                    <th scope="col">Image</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+
+
+
+
+                <tr>
+                    <th scope="row">{{this.No}}</th>
+                    <td>{{this.Name}}</td>
+                    <td>{{this.Category}}</td>
+                    <td>{{this.Author}}</td>
+                    <td>{{this.Publisher}}</td>
+                    <td>{{this.Holder}}</td>
+                    <td><img src="/product-images/{{this._id}}.jpg" style="height: 80px;" alt="image"> </td>
+                    <td><a href="/add-my-books/{{this._id}}" class="btn btn-primary">Add to My Books</a></td>
+
+
+                </tr>
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+</section>
+<section>
+    <div>
+        {{#if SelfHelp}}
+        <h2 class="h2 text-info text-center mt-5">Self help</h2>
+
+        <table id="dtMaterialDesignExample" class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Hold@</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Options</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                {{#each SelfHelp}}
+
+
+
+                <tr>
+                    <th scope="row">{{this.No}}</th>
+                    <td>{{this.Name}}</td>
+                    <td>{{this.Category}}</td>
+                    <td>{{this.Author}}</td>
+                    <td>{{this.Publisher}}</td>
+                    <td>{{this.Holder}}</td>
+                    <td><img src="/product-images/{{this._id}}.jpg" style="height: 80px;" alt="image"> </td>
+                    <td><a href="/add-my-books/{{this._id}}" class="btn btn-primary">Add to My Books</a></td>
+
+
+                </tr>
+                {{/each}}
+
+            </tbody>
+        </table>
+        {{/if}}
+    </div>
+</section>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        $('#dtMaterialDesignExample').DataTable({ "bSort": false });
+
+
+    });
+
+
+
+</script>

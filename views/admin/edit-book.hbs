@@ -1,0 +1,44 @@
+<section>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-center">Edit Book</h2>
+                <form action="/admin/edit-book/{{product._id}}" method="POST" enctype="multipart/form-data">
+
+                    <label for="">No</label>
+                    <input type="text" name="No" class="form-control" value="{{product.No}}">
+
+                    <label for="">Name</label>
+                    <input type="text" name="Name" class="form-control" value="{{product.Name}}">
+
+                    <label for="">Category</label>
+                    <input type="text" name="Category" class="form-control" value="{{product.Category}}">
+
+                    <label for="">Author</label>
+                    <input type="text" name="Author" class="form-control" value="{{product.Author}}" >
+
+                    <label for="">Publisher</label>
+                    <input type="text" name="Publisher" class="form-control" value="{{product.Publisher}}">
+
+                    <label for="">Holds @</label>
+                    <select class="form-control" name="Holder" id="">
+                        <option value="{{product.Holder}}" selected>{{product.Holder}}</option>
+                        <option value="Library" >Library</option>
+                    </select>
+                    
+
+                    <label for="">Image</label>
+                    <img src="/product-images/{{product._id}}.jpg" alt="image" style="height: 100px; width:auto">
+                    <input type="file" name="image" class="form-control">
+
+                    <button type="submit" class="btn btn-success mt-4">Update</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
