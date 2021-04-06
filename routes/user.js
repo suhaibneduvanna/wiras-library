@@ -1,7 +1,6 @@
 const { response } = require('express');
 var express = require('express');
 const session = require('express-session');
-const { render } = require('jade');
 var router = express.Router();
 const productHelpers = require('../helpers/admin-helpers');
 const userHelpers=require('../helpers/user-helpers');
