@@ -6,7 +6,6 @@ var logger = require('morgan');
 var hbs=require('express-handlebars');
 var fileUpload= require('express-fileUpload')
 var db=require('./config/connection')
-
 var userRouter = require('./routes/user');
 var adminRouter = require('./routes/admin');
 var session=require('express-session')
@@ -25,6 +24,7 @@ db.connect((err)=>{
   if(err)
   console.log('error'+err)
   else
+  
   console.log('connected to db')
 })
 

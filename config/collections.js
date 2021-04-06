@@ -1,5 +1,8 @@
 module.exports={
-    PRODUCT_COLLECTION:'product',
-    USER_COLLECTION:'USER',
-    CART_COLLECTION:'cart'
+    BOOKS_COLLECTION:'books',
+    USER_COLLECTION:'users',
+    CART_COLLECTION:'user-cart',
+    CATEGORY_COLLECTION:'categories',
+    PUBLISHER_COLLECTION:'publishers',
+    AUTHOR_COLLECTION:'authors'
 }

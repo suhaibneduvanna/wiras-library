@@ -1,0 +1,50 @@
+<section>
+    <div>
+
+        <div class="row m-5 ">
+            <a href="/admin/add-books" class="btn btn-success ml-auto">Add Book</a>
+        </div>
+        <div class="m-3">
+            <table id="table" class="table mt-5">
+                <thead>
+                    <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Publisher</th>
+                        <th scope="col">Holder</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each books}}
+                    <tr>
+                        <th scope="row">{{this.BookNo}}</th>
+                        <td>{{this.Name}}</td>
+                        <td>{{this.Author}}</td>
+                        <td>{{this.Publisher}}</td>
+                        <td>{{this.Category}}</td>
+                        <td>{{this.Holder}}</td>
+
+                        <td>
+
+                            <a href="/admin/edit-book?id={{this._id}}" class="btn btn-primary">Edit</a>
+                            <a href="/admin/delete-book?id={{this._id}}" class="btn btn-danger"
+                                onclick="return confirm('Are You Sure to Delete {{this.Name}} ?') ">Delete</a>
+                        </td>
+
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    $(function () {
+        $('#table').DataTable({ "bSort": false });
+    });
+</script>

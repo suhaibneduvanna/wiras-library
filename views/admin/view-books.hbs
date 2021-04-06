@@ -20,17 +20,15 @@
                 </tr>
             </thead>
             <tbody>
-                {{#each product}}
+                {{#each books}}
                 <tr>
-                    <th scope="row">{{this.No}}</th>
+                    <th scope="row">{{this.BookNo}}</th>
                     <td>{{this.Name}}</td>
-                    <td>{{this.Category}}</td>
                     <td>{{this.Author}}</td>
                     <td>{{this.Publisher}}</td>
+                    <td>{{this.Category}}</td>
                     <td>{{this.Holder}}</td>
-                    <td><img src="/product-images/{{this._id}}.jpg" style="height: 80px;" alt="image"> </td>
                     <td>
-                        
                         <a href="/admin/edit-book/{{this._id}}" class="btn btn-primary">Edit</a>
                         <a href="/admin/delete-book/{{this._id}}" class="btn btn-danger" onclick="return confirm('Are You Sure to Delete {{this.Name}} ?') ">Delete</a>
                     </td>

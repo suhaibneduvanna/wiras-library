@@ -1,0 +1,30 @@
+<section>
+    <div class="container mt-5">
+        <div class="row" >
+            <a href="/admin/add-author" class="btn btn-success ml-auto">Add Author</a>
+        </div>
+        <br><br>
+        <table id="table" class="table mt-5">
+            <thead>
+                <tr>
+                    
+                    <th scope="col">Author</th>
+                    <th scope="col"></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {{#each authors}}
+                <tr>
+                    
+                    <td>{{this.Name}}</td>
+                    <td>
+                        <a href="/admin/delete-author?id={{this._id}}" class="btn btn-danger" onclick="return confirm('Are You Sure to Delete {{this.Name}} ?') ">Delete</a>
+                    </td>
+                   
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</section>

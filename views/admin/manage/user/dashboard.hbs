@@ -1,0 +1,237 @@
+<style>
+    .tab-pane {
+        margin-bottom: 50px;
+    }
+</style>
+
+<section>
+    <div class="container mt-3">
+        <h5>User ID: <span style="color: #007bff;">{{user.UserID}}</span> </h5>
+        <h5>User Name: <span style="color: #007bff;"> {{user.Name}}</span></h5>
+            <input id="useridinp" hidden value="{{user._id}}">
+            <br>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#menu1">Issue Book</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#menu2">Return</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#menu3">Renew</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#menu4">List of Books</a>
+                </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div id="menu1" class="container tab-pane active"><br>
+
+                    <table id="table1" class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Author</th>
+                                <th scope="col">Publisher</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each allBooks}}
+                            <tr>
+                                <th scope="row">{{this.BookNo}}</th>
+                                <td>{{this.Name}}</td>
+                                <td>{{this.Author}}</td>
+                                <td>{{this.Publisher}}</td>
+                                <td>{{this.Category}}</td>
+
+                                <td class="text-danger">
+                                    {{#if this.Holder}}
+                                    Not Available
+                                    {{else}}
+                                    <button value="{{this._id}}" class="btn btn-success">Issue</button>
+                                    {{/if}}
+                                </td>
+
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+
+                </div>
+                <div id="menu2" class="container tab-pane fade"><br>
+                    <table id="table2" class="table ">
+                        <thead>
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Author</th>
+                                <th scope="col">Issue Date</th>
+                                <th scope="col">Return Date</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {{#each cart}}
+                            {{#if this.Status}}
+                            <tr>
+                                {{#each this.Book}}
+                                <th scope="row">{{this.BookNo}}</th>
+                                <td>{{this.Name}}</td>
+                                <td>{{this.Author}}</td>
+                                {{/each}}
+                                <td id="ss">{{this.IssueDt}}</td>
+                                <td>{{this.ReturnDt}}</td>
+
+                                <td>
+                                    <button value="{{this.IssueID}}" class="btn btn-danger return">Return</button>
+                                </td>
+
+                            </tr>
+                            {{/if}}
+                            {{/each}}
+
+                        </tbody>
+                    </table>
+                </div>
+                <div id="menu3" class="container tab-pane fade"><br>
+                    <table id="table3" class="table ">
+                        <thead>
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Author</th>
+                                <th scope="col">Issue Date</th>
+                                <th scope="col">Return Date</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {{#each cart}}
+                            {{#if this.Status}}
+                            <tr>
+                                {{#each this.Book}}
+                                <th scope="row">{{this.BookNo}}</th>
+                                <td>{{this.Name}}</td>
+                                <td>{{this.Author}}</td>
+                                {{/each}}
+                                <td>{{this.IssueDt}}</td>
+                                <td>{{this.ReturnDt}}</td>
+
+                                <td>
+
+                                    <button value="{{this.IssueID}}" class="btn btn-danger renew">Renew</button>
+                                </td>
+
+                            </tr>
+                            {{/if}}
+                            {{/each}}
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="menu4" class="container tab-pane fade"><br>
+                    <table id="table4" class="table ">
+                        <thead>
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Author</th>
+                                <th scope="col">Issue Date</th>
+                                <th scope="col">Return Date</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each cart}}
+                            <tr>
+                                {{#each this.Book}}
+                                <th scope="row">{{this.BookNo}}</th>
+                                <td>{{this.Name}}</td>
+                                <td>{{this.Author}}</td>
+                                {{/each}}
+                                <td>{{this.IssueDt}}</td>
+                                <td>{{this.ReturnDt}}</td>
+
+
+                                {{#if this.Status}}
+                                <td class="text-success">
+                                    In Hand
+                                </td>
+
+                                {{else}}
+                                <td class="text-danger">
+                                    Returned
+                                </td>
+                                {{/if}}
+                               
+
+
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    </div>
+</section>
+<div id="cover-spin"></div>
+<script>
+  
+
+    $('.btn-success').click(function () {
+        $('#cover-spin').show(0)
+        let bid = this.value
+        let uid = document.getElementById('useridinp').value
+        $.ajax({
+            url: '/admin/issue-book?bid=' + bid + '&&uid=' + uid,
+            method: 'get',
+            success: (data) => {
+
+                location.reload();
+
+            }
+        })
+    });
+
+    $('.return').click(function () {
+        let iid = this.value
+        $('#cover-spin').show(0)
+        let uid = document.getElementById('useridinp').value
+        $.ajax({
+            url: '/admin/return-book?bid=' + iid + '&&uid=' + uid,
+            method: 'get',
+            success: (data) => {
+                location.reload();
+
+            }
+        })
+    });
+
+    $('.renew').click(function () {
+        
+        let iid = this.value
+        $('#cover-spin').show(0)
+        let uid = document.getElementById('useridinp').value
+        $.ajax({
+            url: '/admin/renew-book?bid=' + iid + '&&uid=' + uid,
+            method: 'get',
+            success: (data) => {
+                location.reload();
+
+            }
+        })
+    });
+    
+    $(function () {
+        $('.table').DataTable({ "bSort": false });
+    });
+</script>
