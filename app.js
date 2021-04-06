@@ -4,7 +4,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var hbs=require('express-handlebars');
-var fileUpload= require('express-fileUpload')
 var db=require('./config/connection')
 var userRouter = require('./routes/user');
 var adminRouter = require('./routes/admin');
@@ -17,7 +16,6 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.engine('hbs',hbs({extname:'hbs',defaultLayout:'layout',layoutsDir:__dirname+'/views/layout/',partialsDir:__dirname+'/views/partials/'}))
-app.use(fileUpload())
 app.use(session({secret:"Key",cookie:{maxAge:1000*60*60}}))
 
 db.connect((err)=>{
