@@ -1,22 +1,17 @@
 
 
 <section>
-    <div>
-        <div class="row mt-4" >
-            <a href="/admin/add-books" class="btn btn-success ml-auto pr-5 ">Add Book</a>
-        </div>
-        <br><br>
-        <table id="table" class="table mt-5">
+    <div class="m-3">
+        <table id="table" class="table">
             <thead>
                 <tr>
-                    <th scope="col">No</th>
+                    <th scope="col">BooK No</th>
                     <th scope="col">Name</th>
                     <th scope="col">Category</th>
                     <th scope="col">Author</th>
                     <th scope="col">Publisher</th>
-                    <th scope="col">Hold@</th>
-                    <th scope="col">Image</th>
-                    <th scope="col">Options</th>
+                    <th scope="col">Status/Holder</th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -27,11 +22,12 @@
                     <td>{{this.Author}}</td>
                     <td>{{this.Publisher}}</td>
                     <td>{{this.Category}}</td>
-                    <td>{{this.Holder}}</td>
-                    <td>
-                        <a href="/admin/edit-book/{{this._id}}" class="btn btn-primary">Edit</a>
-                        <a href="/admin/delete-book/{{this._id}}" class="btn btn-danger" onclick="return confirm('Are You Sure to Delete {{this.Name}} ?') ">Delete</a>
-                    </td>
+                    {{#if this.Holder}}
+                    <td class="text-danger">{{this.Holder}}</td>
+                    {{else}}
+                    <td class="text-success">Available</td>
+                    {{/if}}
+                    
                    
                 </tr>
                 {{/each}}
@@ -41,8 +37,10 @@
 </section>
 
 <script>
+
    $(function(){
         $('#table').DataTable({ "bSort" : false });
     });
+    
 </script>
 
