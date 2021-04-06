@@ -17,7 +17,15 @@ router.get('/', function(req, res, next) {
 
 router.get('/books',function(req,res){
   adminHelpers.getBooks().then((books)=>{
+
     res.render('admin/manage/book/main.hbs',{admin:true,books})
+  })
+  
+})
+
+router.get('/catelogue',function(req,res){
+  adminHelpers.getBooks().then((books)=>{
+    res.render('admin/catelogue.hbs',{admin:true,books})
   })
   
 })
@@ -109,8 +117,11 @@ router.get('/categories',function(req,res){
 
 // ADD 
 
-router.get('/add-books',function(req,res){
-  res.render('admin/manage/book/add-book',{admin:true})
+router.get('/add-books',async function(req,res){
+ let authors = await adminHelpers.getAuthors()
+ let publishers = await adminHelpers.getPublishers()
+ let categories = await adminHelpers.getCategories()
+  res.render('admin/manage/book/add-book',{admin:true,authors,publishers,categories})
 })
 
 router.get('/add-user',function(req,res){
